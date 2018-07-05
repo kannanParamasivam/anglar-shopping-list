@@ -14,8 +14,17 @@
 }
 
 /* Hide side nav when screen width is above 959px */
-@media (min-width: 959px) {
+/* @media (min-width: 959px) {
   .sidenav {
     display: none
   }
+} */
+
+.hidden {
+  display: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+  /* border: 2px solid red; */
 }
