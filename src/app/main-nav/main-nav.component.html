@@ -3,29 +3,27 @@
   <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async)}" fixedInViewport="false" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
 
-    <mat-toolbar color="light">Menu</mat-toolbar>
+    <mat-toolbar color="primary">Menu</mat-toolbar>
 
     <mat-nav-list>
-      <button mat-button class="btn-block text-left">Link 1</button>
-      <button mat-button class="btn-block text-left">Link 2</button>
-      <button mat-button class="btn-block text-left">Link 3</button>
+      <button mat-button class="btn-block text-left">Recipes</button>
+      <button mat-button class="btn-block text-left">Shopping List</button>
     </mat-nav-list>
 
   </mat-sidenav>
 
   <mat-sidenav-content>
 
-    <mat-toolbar color="light">
+    <mat-toolbar color="primary">
 
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <span>angular-shopping-list</span>
+      <span>Recipe Book</span>
       <div class="btn-group btn-group-toggle" [ngClass]="{hidden: (isHandset$ | async)}" data-toggle="buttons">
-        <button mat-button class="btn-lg">Link 1</button>
-        <button mat-button class="btn-lg">Link 2</button>
-        <button mat-button class="btn-lg">Link 3</button>
+        <button mat-button class="btn-lg">Recipes</button>
+        <button mat-button class="btn-lg">Shopping List</button>
       </div>
 
       <span class="spacer" [ngClass]="{hidden: (isHandset$ | async)}"></span>
@@ -33,20 +31,21 @@
       <button mat-button class="btn-lg" [ngClass]="{hidden: (isHandset$ | async)}">Right side link</button>
 
 
-      <button mat-button [matMenuTriggerFor]="rootMenu" isIconButton=true class="btn-lg" [ngClass]="{hidden: (isHandset$ | async)}">Menu
-        <mat-icon matSuffix>expand_more</mat-icon>
+      <button mat-button [matMenuTriggerFor]="rootMenu" isIconButton=true class="btn-lg" [ngClass]="{hidden: (isHandset$ | async)}">Manage
+        <mat-icon matSuffix>arrow_drop_down</mat-icon>
       </button>
       <mat-menu #rootMenu="matMenu" [overlapTrigger]="false">
         <button mat-menu-item [matMenuTriggerFor]="subMenu">Power</button>
-        <button mat-menu-item>System settings</button>
+        <button mat-menu-item>Save Data</button>
+        <button mat-menu-item>Fetch Data</button>
       </mat-menu>
       <mat-menu #subMenu="matMenu">
         <button mat-menu-item>Shut down</button>
         <button mat-menu-item>Restart</button>
-        <button mat-menu-item>Hibernate</button>
       </mat-menu>
     </mat-toolbar>
+
     <ng-content></ng-content>
-    <!-- Add Content Here -->
+
   </mat-sidenav-content>
 </mat-sidenav-container>
