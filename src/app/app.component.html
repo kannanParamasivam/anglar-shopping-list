@@ -1,9 +1,9 @@
-<app-main-nav>
+<app-main-nav (featureSelected)="onNavigate($event)">
   <div class="container-fluid border border-dark">
     <div class="row">
       <div class="col-sm-12 ">
-        <app-recipes></app-recipes>
-        <app-shopping-list></app-shopping-list>
+        <app-recipes *ngIf="loadedFeature ==='recipe'" ></app-recipes>
+        <app-shopping-list *ngIf="loadedFeature !=='recipe'"></app-shopping-list>
         <br>
         <button mat-raised-button color="primary">Click Me</button>
       </div>

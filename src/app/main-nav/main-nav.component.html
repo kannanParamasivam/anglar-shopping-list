@@ -6,8 +6,8 @@
     <mat-toolbar color="primary">Menu</mat-toolbar>
 
     <mat-nav-list>
-      <button mat-button class="btn-block text-left">Recipes</button>
-      <button mat-button class="btn-block text-left">Shopping List</button>
+      <button mat-button class="btn-block text-left" (click)="onSelect('recipe')">Recipes</button>
+      <button mat-button class="btn-block text-left" (click)="onSelect('shopping-list')">Shopping List</button>
     </mat-nav-list>
 
   </mat-sidenav>
@@ -22,8 +22,8 @@
 
       <span>Recipe Book</span>
       <div class="btn-group btn-group-toggle" [ngClass]="{hidden: (isHandset$ | async)}" data-toggle="buttons">
-        <button mat-button class="btn-lg">Recipes</button>
-        <button mat-button class="btn-lg">Shopping List</button>
+        <button mat-button class="btn-lg" (click)="onSelect('recipe')">Recipes</button>
+        <button mat-button class="btn-lg" (click)="onSelect('shopping-list')">Shopping List</button>
       </div>
 
       <span class="spacer" [ngClass]="{hidden: (isHandset$ | async)}"></span>
