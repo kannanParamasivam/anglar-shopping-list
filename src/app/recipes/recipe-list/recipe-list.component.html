@@ -19,12 +19,13 @@
                 <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive" style="max-height: 50px">
             </span>
         </a> -->
-        <span *ngFor="let recipe of recipes">
+        <span *ngFor="let recipe of recipes;let i=index">
             <div class="card">
                 <div class="row">
                     <div class="col-12">
                         <div class="card-header">
                             <h4>{{recipe.name}}</h4>
+                            <h4 class="float-right">{{i}}</h4>
                         </div>
                     </div>
                 </div>
