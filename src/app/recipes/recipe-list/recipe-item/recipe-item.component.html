@@ -1,3 +1,23 @@
-<p>
-  recipe-item works!
-</p>
+<span>
+  <div class="card">
+    <div class="row">
+      <div class="col-12">
+        <div class="card-header">
+          <h4>{{recipe.name}}</h4>
+          <h4 class="float-right">{{i}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card-text float-left">{{recipe.description}}</div>
+      </div>
+      <div class="col-sm-4">
+        <span class="float-right">
+          <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive" style="max-height: 50px">
+        </span>
+      </div>
+    </div>
+  </div>
+  <br>
+</span>
