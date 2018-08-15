@@ -30,3 +30,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Add material responsive navigation bar by symantic
  `ng generate @angular/material:material-nav --name=main-nav`
+
+## View Encapsulation
+`component.encapsulation: ViewEncapsulation.Navive`
+> Native is default which does **shadow dom** technology
+None removes view encapsulation
+
+`component.encapsulation: ViewEncapsulation.None`
+> This will remove view encapsulation and apply the styles defined in component globally
+
+
